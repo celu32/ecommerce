@@ -17,6 +17,11 @@
 	gap: 1.2rem;
 }
 
+.navbarDetail img{
+	width: 50px;
+	height: 50px;
+  }
+
 .navbarCartContainer{
   align-items: center;
 	background-color: rgba(255, 255, 255, 0.215);
