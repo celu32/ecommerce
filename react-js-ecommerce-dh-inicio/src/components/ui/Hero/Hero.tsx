@@ -1,7 +1,8 @@
 import styles from "./Hero.module.css"
+import { FC } from "react"
 
 
-const Hero = () => {
+const Hero : FC = () => {
   return (
     <div className={styles.heroContainer}>
         <div className={styles.heroTitleContainer}>

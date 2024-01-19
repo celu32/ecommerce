@@ -1,10 +1,10 @@
 import Logo from "../../../assets/logo.svg"
 import Cart from "../../../assets/cart.svg"
 import Styles from "./Navbar.module.css"
-import { useState } from "react"
+import { FC, useState } from "react"
 import CartModal from "../CartModal/CartModal"
 
-const Navbar = () => {
+const Navbar : FC = () => {
 
   const [showCartModal, setShowCartModal]=useState(false)
 

@@ -2,24 +2,27 @@ import CardProduct from "../../components/ui/CardProduct/CardProduct"
 import Hero from "../../components/ui/Hero/Hero"
 import styles from "./Home.module.css"
 import { useEffect, useState } from "react"
+import { getProducts } from "../../service/products.service"
+import Product from "../../interface/product"
 
 const Home = () => {
 
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState<Product[]>([])
 
-    const getProducts = async () => {
-        try {
-            const response = await fetch('http://localhost:3000/products')
-            const data = await response.json()
-            setProducts(data)
-        }
-        catch (error){ 
-            console.log(error)
-        }
-    }
+    const [error, setError] = useState(false)
+
+    const [isLoading, setIsLoading] = useState (true)
+
+
 
     useEffect(() => {
-        getProducts()
+        getProducts().then((data) => {
+            setProducts(data)
+        }).catch(()=>{
+            setError(true)
+        }).finally(()=>{
+            setIsLoading(false)
+        })
     },
     []
     )
@@ -27,6 +30,8 @@ const Home = () => {
     return (
         <>
             <Hero />
+            {isLoading && <p>Loading...</p>}
+            {error && <p>Something went wrong</p>}
             <div className={styles.container}> 
             {products.map((product) => (
                 <CardProduct key={product.id} product={product} />
