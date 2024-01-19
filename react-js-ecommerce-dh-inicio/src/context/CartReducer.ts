@@ -1,18 +1,20 @@
-export const inicialState = {
+import CartProdct from "../interface/cartProduct"
+
+export interface CartState{
+    cartItems:CartProdct[]
+}
+
+export const inicialState: CartState = {
     cartItems:[]
 }
 
-/*
-modelo del objeto action: 
-
-action:{
-    type: "ADD_TO_CART"/"REMOVE_FROM_CART"
-    payload: product
+export interface CartAction{
+    type: "ADD_TO_CART" | "REMOVE_FROM_CART";
+    payload: CartProdct
 }
 
-*/
 
-export const cartReducer = (state, action) => {
+export const cartReducer = (state: CartState, action: CartAction) : CartState => {
 
     switch (action.type) {
 
@@ -42,19 +44,24 @@ export const cartReducer = (state, action) => {
 
             const itemToRemove = state.cartItems.find((item)=>item.id === id)
 
-            if(itemToRemove.quantity === 1){
-                return{
-                    ...state,
-                    cartItems:state.cartItems.filter((item)=>item.id !== id )
-                }
-            } else {
-                return{
-                   ...state,
-                   cartItems:state.cartItems.map((item)=>item.id === id ? {...itemToRemove, quantity: itemToRemove.quantity - 1} : item)
-                }
-                
-            }
+            if (itemToRemove) {
 
+                if(itemToRemove.quantity === 1){
+                    return{
+                        ...state,
+                        cartItems:state.cartItems.filter((item)=>item.id !== id )
+                    }
+                } else {
+                    return{
+                    ...state,
+                    cartItems:state.cartItems.map((item)=>item.id === id ? {...itemToRemove, quantity: itemToRemove.quantity - 1} : item)
+                    }
+                    
+                }
+            }
+            else{
+                return state
+            }
         }
 
         default:
