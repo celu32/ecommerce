@@ -1,6 +1,6 @@
 .cardContainer {
 	align-items: center;
-	background-color: #0a79fb;
+	background-color: #EDB00F;
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
@@ -11,7 +11,7 @@
 }
 
 .cardContainer::before {
-	background: rgba(0 88 254 / 50%);
+	background: rgba(227, 232, 240, 0.5);
 	border-radius: 20px;
 	clip-path: circle(150px at 80% 20%);
 	content: "";
@@ -29,21 +29,15 @@
 
 .cardImage{
   margin-bottom: 1rem;
-	object-fit: contain;
-	position: absolute;
-	top: 40%;
-	transform: translateY(-60%);
 	z-index: 10000;
-  width: 110px;
+ 	height: 100px;
 }
 
 .cardDetail{
-  align-items: center;
-	bottom: 0;
+  	align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	position: absolute;
 }
 
 .cardTitle{
@@ -55,13 +49,15 @@
 }
 
 .cardBody{
-  display: flex;
+  	display: flex;
+  	display: flex;
+  	flex-direction: column;
 	justify-content: space-around;
 	width: 100%;
 }
 
 .cardType{
-  color: #fff;
+  	color: #fff;
 	font-size: 1rem;
 }
 
@@ -72,7 +68,7 @@
 
 .cardButton{
   all: unset;
-	background-color: #EDB00F;
+	background-color: #3874f6;
 	border-radius: 10px;
 	border: none;
 	color: #fff;
@@ -88,5 +84,5 @@
 }
 
 .cardButton:hover{
-  background-color: #edb20fa7;
+  background-color:#1f3d7f ;
 }

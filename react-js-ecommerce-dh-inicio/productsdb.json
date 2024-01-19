@@ -1,0 +1,47 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Moto E13",
+        "price": "200",
+        "category": "Smartphones",
+        "image": "https://tiendaonline.movistar.com.ar/media/catalog/product/cache/1d01ed3f1ecf95fcf479279f9ae509ad/m/o/moto-e13-natural-front_1.png"
+      },
+      {
+        "id": 2,
+        "title": "Moto G84",
+        "price": 899,
+        "category": "Smartphones",
+        "image": "https://tiendaonline.movistar.com.ar/media/catalog/product/cache/1d01ed3f1ecf95fcf479279f9ae509ad/4/_/4_moto-g84-outerspace-full.png"
+      },
+      {
+        "id": 3,
+        "title": "Samsung S21FE",
+        "price": 1249,
+        "category": "Smartphones",
+        "image": "https://tiendaonline.movistar.com.ar/media/catalog/product/cache/1d01ed3f1ecf95fcf479279f9ae509ad/s/m/sm-g990_s21fe_front_za_1_8_3.png"
+      },
+      {
+        "id": 4,
+        "title": "Samsung A34",
+        "price": 799,
+        "category": "Smartphones",
+        "image": "https://tiendaonline.movistar.com.ar/media/catalog/product/cache/1d01ed3f1ecf95fcf479279f9ae509ad/a/3/a34-5g_2.png"
+      },
+      {
+        "id": 5,
+        "title": "Samsung A04",
+        "price": 599,
+        "category": "Smartphones",
+        "image": "https://tiendaonline.movistar.com.ar/media/catalog/product/cache/1d01ed3f1ecf95fcf479279f9ae509ad/a/0/a04_1__1_1_3.png"
+      },
+      {
+        "id": 6,
+        "title": "Samsung A14",
+        "price": 849,
+        "category": "Smartphones",
+        "image": "https://tiendaonline.movistar.com.ar/media/catalog/product/cache/1d01ed3f1ecf95fcf479279f9ae509ad/s/a/samsung-a14-front.png"
+      }
+
+  ]
+}

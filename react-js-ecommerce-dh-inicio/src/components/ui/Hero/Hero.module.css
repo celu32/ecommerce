@@ -1,5 +1,5 @@
 .heroContainer{
-  background-image: url("../../../assets/hero.png");
+  background-image: url("https://media.istockphoto.com/id/1335669510/es/vector/conjunto-de-dispositivos-isom%C3%A9tricos-vectoriales.jpg?s=2048x2048&w=is&k=20&c=QDRnabvCmuphpgwZCLuuYizD-uGzbhMc-LPfcmy7ARk=");
 	background-position: 50%;
 	background-size: cover;
 	align-items: center;
@@ -33,5 +33,5 @@
 }
 
 .heroContainer span{
-  color: #ffc107;
+  color: #f64829;
 }
