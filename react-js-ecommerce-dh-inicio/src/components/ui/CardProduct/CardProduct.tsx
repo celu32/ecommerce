@@ -3,6 +3,7 @@ import styles from "./CardProduct.module.css"
 import Product from "../../../interface/product"
 import CartProduct from "../../../interface/cartProduct"
 import useCartContext from "../../../hooks/useCartContext"
+import { Toaster, toast } from 'sonner'
 
 interface Props{
   product: Product
@@ -23,6 +24,7 @@ const CardProduct: FC<Props> = ({product}) => {
 
   const addToCart= (item: CartProduct ) => {
     dispatch({type:"ADD_TO_CART", payload: item})
+    toast.success('Product added to cart')
   }
 
   return (
@@ -35,6 +37,7 @@ const CardProduct: FC<Props> = ({product}) => {
                 <p className={styles.cardPrice}>${product.price} <small>00</small></p>
             </div>
         </div>
+        <Toaster richColors />
         <button className={styles.cardButton} onClick={()=>addToCart(item)} >Add to Cart</button>
     </div>
   )
