@@ -1,8 +1,8 @@
-import styles from "./Hero.module.css"
-import { FC } from "react"
+import styles from "./Header.module.css"
 
 
-const Hero : FC = () => {
+
+const Header = () => {
   return (
     <div className={styles.heroContainer}>
         <div className={styles.heroTitleContainer}>
@@ -12,4 +12,4 @@ const Hero : FC = () => {
   )
 }
 
-export default Hero
+export default Header

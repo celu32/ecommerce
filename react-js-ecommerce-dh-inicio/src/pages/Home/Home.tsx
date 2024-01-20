@@ -1,5 +1,5 @@
 import CardProduct from "../../components/ui/CardProduct/CardProduct"
-import Hero from "../../components/ui/Hero/Hero"
+import Header from "../../components/ui/Header/Header"
 import styles from "./Home.module.css"
 import { useEffect, useState } from "react"
 import { getProducts } from "../../service/products.service"
@@ -29,7 +29,7 @@ const Home = () => {
 
     return (
         <>
-            <Hero />
+            <Header />
             {isLoading && <p>Loading...</p>}
             {error && <p>Something went wrong</p>}
             <div className={styles.container}> 

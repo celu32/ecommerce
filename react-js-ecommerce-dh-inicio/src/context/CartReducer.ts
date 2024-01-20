@@ -8,6 +8,8 @@ export const inicialState: CartState = {
     cartItems:[]
 }
 
+
+
 export interface CartAction{
     type: "ADD_TO_CART" | "REMOVE_FROM_CART";
     payload: CartProdct
@@ -50,6 +52,8 @@ export const cartReducer = (state: CartState, action: CartAction) : CartState =>
                     return{
                         ...state,
                         cartItems:state.cartItems.filter((item)=>item.id !== id )
+                       
+
                     }
                 } else {
                     return{
