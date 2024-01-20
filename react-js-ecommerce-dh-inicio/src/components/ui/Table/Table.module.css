@@ -4,7 +4,7 @@
 	border-radius: 5px;
 	border-spacing: 0;
 	color: #fff;
-	margin-top: 2rem;
+	margin-top: 3rem;
 	padding: 1rem;
 	width: 100%;
 }
@@ -33,7 +33,7 @@
 	font-size: 1rem;
 	padding: 5px;
 	text-align: center;
-	width: 95%;
+	width: 30px;
 }
 
 .modalButtonRemove{
@@ -46,7 +46,7 @@
 	font-size: 1rem;
 	padding: 5px;
 	text-align: center;
-	width: 95%;
+	width: 30px;
 }
 
 .modalTotalContainer{

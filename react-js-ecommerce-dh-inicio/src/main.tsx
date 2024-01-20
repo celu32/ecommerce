@@ -4,8 +4,8 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LayoutMain from "./components/ui/Layout/LayoutMain";
 import Home from "./pages/Home/Home";
-import Cart from "./pages/Cart/Cart";
 import { CartProvider } from "./context/CartProvider";
+import Checkout from "./pages/Checkout/Checkout";
 
 
 
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
 		element:<LayoutMain />,
 		children:[
 			{index:true, element:<Home />},
-			{path:"/cart", element:<Cart />}
+			{path:"/checkout", element:<Checkout />}
 	]
 	}
 ])
