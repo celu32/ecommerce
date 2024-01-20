@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className={styles.heroContainer}>
         <div className={styles.heroTitleContainer}>
-            <h1>Super Flash Sale <span>50% Off</span></h1>
+            <img src="../../../assets/hero.png" alt="" />
         </div>
     </div>
   )
