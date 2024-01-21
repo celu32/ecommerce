@@ -3,6 +3,9 @@ import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import styles from './CardCredit.module.css'
 import { useState } from 'react';
 import { toast } from 'sonner'
+import useCartContext from '../../../hooks/useCartContext';
+import CartProdct from '../../../interface/cartProduct';
+import { useNavigate } from 'react-router-dom';
 
 const CardCredit = () => {
 
@@ -13,6 +16,8 @@ const CardCredit = () => {
           name: '',
           focus: '',
     });
+
+    const {dispatch} = useCartContext()
 
     const {number, expiry, cvc, name, focus} = cardData
 
@@ -28,17 +33,19 @@ const CardCredit = () => {
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault()
         if([number, expiry, cvc, name].includes('')){
-            console.log('All fields are required')
             toast.error('All fields are required')
             return
         }
+        toast.success('Your payment has been processed successfully')
         setCardData({
             number: '',
             expiry: '',
             cvc: '',
             name: '',
             focus: '',
-      })
+        })
+        dispatch({type:"CLEAR_CART", payload:{} as CartProdct})
+        
     }
 
   return (
