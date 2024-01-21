@@ -6,8 +6,10 @@ import LayoutMain from "./components/ui/Layout/LayoutMain";
 import Home from "./pages/Home/Home";
 import { CartProvider } from "./context/CartProvider";
 import Checkout from "./pages/Checkout/Checkout";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 
+const queryClient = new QueryClient
 
 const router = createBrowserRouter([
 	{
@@ -17,13 +19,21 @@ const router = createBrowserRouter([
 			{index:true, element:<Home />},
 			{path:"/checkout", element:<Checkout />}
 	]
+	},
+	{
+		path:"/login", element:<p>login</p>,
+	},
+	{
+		path:"/ldashboard", element:<p>dashboard</p>,
 	}
 ])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<CartProvider> 
-			<RouterProvider router={router}/>
-		</CartProvider>
+		<QueryClientProvider client={queryClient}>
+			<CartProvider> 
+				<RouterProvider router={router}/>
+			</CartProvider>
+		</QueryClientProvider>
 	</React.StrictMode>
 );

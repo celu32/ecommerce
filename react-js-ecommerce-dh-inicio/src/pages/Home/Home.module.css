@@ -1,8 +1,9 @@
 .container{
   display: grid;
-	grid-gap: 1rem;
+	grid-gap: 5rem;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	padding: 60px 40px;
+	padding: 80px;
+
 }
 
 @media (min-width: 992px) {
@@ -19,9 +20,10 @@
   gap: 10px;
 }
 .paginationActive{
-  color: #fff;
+  background-color:#EDB00F ;
+  color:#fff;
   font-size: 20px;
-  border: 1px solid #EDB00F;
+  border: 1px solid #FFFFFF;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -45,4 +47,8 @@
 	text-transform: uppercase;
 	transition: 0.5s ease-in-out;
 	width: 160px;
+}
+.paginationButton:disabled{
+  background-color: #edb20f5e;
+  color: #ffffffab;
 }
