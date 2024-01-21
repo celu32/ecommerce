@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import { CartProvider } from "./context/CartProvider";
 import Checkout from "./pages/Checkout/Checkout";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Login from "./pages/Login/Login";
 
 
 const queryClient = new QueryClient
@@ -21,10 +22,10 @@ const router = createBrowserRouter([
 	]
 	},
 	{
-		path:"/login", element:<p>login</p>,
+		path:"/login", element:<Login/>,
 	},
 	{
-		path:"/ldashboard", element:<p>dashboard</p>,
+		path:"/dashboard", element:<p>dashboard</p>,
 	}
 ])
 

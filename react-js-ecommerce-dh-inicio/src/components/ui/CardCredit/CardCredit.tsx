@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { toast } from 'sonner'
 import useCartContext from '../../../hooks/useCartContext';
 import CartProdct from '../../../interface/cartProduct';
-import { useNavigate } from 'react-router-dom';
+
 
 const CardCredit = () => {
 
@@ -98,7 +98,7 @@ const CardCredit = () => {
                     <div className={styles.formControl} >
                         <label htmlFor="cvc">Card CVC</label>
                         <input 
-                            type="text" 
+                            type="password" 
                             name= "cvc" 
                             id="cvc" 
                             value={cvc}
