@@ -2,48 +2,65 @@ import Cards from 'react-credit-cards-2';
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
 import styles from './CardCredit.module.css'
 import { useState } from 'react';
+import { toast } from 'sonner'
 
 const CardCredit = () => {
 
-    
-    const [state, setState] = useState({
+    const [cardData, setCardData] = useState({
           number: '',
           expiry: '',
           cvc: '',
           name: '',
           focus: '',
     });
-    
 
-    const handleInputChange = (evt) => {
-        const { name, value } = evt.target; 
-        setState((prev) => ({ ...prev, [name]: value }));
+    const {number, expiry, cvc, name, focus} = cardData
+
+    const handleInputChange = (e : React.ChangeEvent<HTMLInputElement>)  => {
+        const { name, value } = e.target; 
+        setCardData((prev) => ({ ...prev, [name]: value }));
     }
         
-    const handleInputFocus = (evt) => {
-        setState((prev) => ({ ...prev, focus: evt.target.name }));
+    const handleInputFocus = (e : React.FocusEvent<HTMLInputElement>) => {
+        setCardData((prev) => ({ ...prev, focus: e.target.name }));
+    }
+
+    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
+        e.preventDefault()
+        if([number, expiry, cvc, name].includes('')){
+            console.log('All fields are required')
+            toast.error('All fields are required')
+            return
+        }
+        setCardData({
+            number: '',
+            expiry: '',
+            cvc: '',
+            name: '',
+            focus: '',
+      })
     }
 
   return (
         <div className={styles.container}>
             <div>
             <Cards 
-                number={state.number}
-                expiry={state.expiry}
-                cvc={state.cvc}
-                name={state.name}
-                focused={state.focus}
+                number={number}
+                expiry={expiry}
+                cvc={cvc}
+                name={name}
+                focused={focus as any}
                 />
             </div>
 
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <div className={styles.formControl}>
                     <label htmlFor="number">Card Number</label>
                     <input 
                         type="text" 
                         name= "number" 
                         id="number"
-                        value={state.number}
+                        value={number}
                         onChange={handleInputChange}
                         onFocus={handleInputFocus}  
                     />
@@ -54,7 +71,7 @@ const CardCredit = () => {
                         type="text" 
                         name= "name" 
                         id="name"
-                        value={state.name}
+                        value={name}
                         onChange={handleInputChange}
                         onFocus={handleInputFocus}  
                     />
@@ -66,7 +83,7 @@ const CardCredit = () => {
                             type="text" 
                             name= "expiry" 
                             id="expiry"
-                            value={state.expiry}
+                            value={expiry}
                             onChange={handleInputChange}
                             onFocus={handleInputFocus} 
                         />
@@ -77,14 +94,15 @@ const CardCredit = () => {
                             type="text" 
                             name= "cvc" 
                             id="cvc" 
-                            value={state.cvc}
+                            value={cvc}
                             onChange={handleInputChange}
                             onFocus={handleInputFocus} 
                         />
                     </div>
                 </div>
+                <button type='submit' className={styles.buyButton}>Buy Now</button>
             </form>
-            <button className={styles.buyButton}>Buy Now</button>
+            
         </div>
     )
 }

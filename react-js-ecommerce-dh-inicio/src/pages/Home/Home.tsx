@@ -4,6 +4,7 @@ import styles from "./Home.module.css"
 import { useEffect, useState } from "react"
 import { getProducts } from "../../service/products.service"
 import Product from "../../interface/product"
+import { Toaster} from 'sonner'
 
 const Home = () => {
 
@@ -37,6 +38,7 @@ const Home = () => {
                 <CardProduct key={product.id} product={product} />
             )
             )}
+            <Toaster richColors />
             </div>
         </>
     )
