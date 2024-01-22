@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh; 
-  margin-top: 50px;
+  background-color: rgb(50, 50, 50);
 }
 
 .formControlLogin {
@@ -38,3 +38,4 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+

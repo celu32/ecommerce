@@ -1,7 +1,8 @@
 .container{
-  margin:6rem 3rem 0rem 3rem;
+  padding:6rem 3rem 0rem 3rem;
   display: flex;
   flex-direction: column;
+  background-color: rgb(50, 50, 50);
 }
 
 .title{

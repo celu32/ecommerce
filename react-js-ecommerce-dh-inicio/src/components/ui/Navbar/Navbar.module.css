@@ -44,3 +44,17 @@
 	right: 0px;
 	top: -25px;
 }
+
+.logoutButton{
+padding: 10px 20px;
+  background-color:  #EDB00F;
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+	color: #EDB00F
+  }

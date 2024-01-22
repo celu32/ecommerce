@@ -24,6 +24,11 @@ const Navbar = () => {
     return cartItems.length
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem('userLogin')
+    navigate('/login')
+  }
+
   return (
     <div className={Styles.navbarContainer}>
         <div className={Styles.navbarDetail} onClick={()=>navigate('/')}>
@@ -31,7 +36,7 @@ const Navbar = () => {
             <h2>DH Smartphones</h2>
         </div> 
         {
-          location.pathname != "/checkout" && (
+          location.pathname == "/" && (
             <>
               <div className={Styles.navbarCartContainer}>
                 <p className={Styles.navbarTextAmount}>{getTotal()}</p>
@@ -43,6 +48,13 @@ const Navbar = () => {
             </>
           )
         }
+        {
+          location.pathname == "/dashboard" && (
+            <button className={Styles.logoutButton} onClick={handleLogout}>Logout</button> 
+          )
+        }
+
+      
         
     </div>
   )

@@ -2,6 +2,7 @@ import styles from './Login.module.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Toaster, toast } from 'sonner'
+import Navbar from '../../components/ui/Navbar/Navbar'
 
 const Login = () => {
 
@@ -26,7 +27,7 @@ const Login = () => {
             toast.error('All fields are required')  
         }
         else{
-            localStorage.setItem('userLoguin', JSON.stringify(userData.email))
+            localStorage.setItem('userLogin', JSON.stringify(userData.email))
             navigate('/dashboard') 
         }
         
@@ -34,6 +35,8 @@ const Login = () => {
 
 
   return (
+    <>
+    <Navbar />
     <div className={styles.containerLogin}>
         <h2>Login</h2>
         <Toaster richColors />
@@ -63,6 +66,7 @@ const Login = () => {
             </div>
         </form>
     </div>
+    </>
   )
 }
 
